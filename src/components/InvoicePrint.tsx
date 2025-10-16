@@ -13,6 +13,9 @@ export default function InvoicePrint({ order, onClose }: InvoicePrintProps) {
   const invoiceRef = useRef<HTMLDivElement>(null);
   const [template, setTemplate] = useState<'lajutuju' | 'biggor'>('lajutuju');
 
+  // Base URL untuk GitHub Pages / local
+  const basePath = import.meta.env.BASE_URL || '/';
+
   // 🔧 Nonaktifkan deteksi nomor otomatis di Safari
   useEffect(() => {
     const meta = document.createElement('meta');
@@ -60,7 +63,9 @@ export default function InvoicePrint({ order, onClose }: InvoicePrintProps) {
     const originalStyles = { ...invoiceElement.style };
 
     const watermark = document.createElement('img');
-    watermark.src = template === 'lajutuju' ? '/logo.png' : '/biggor.png';
+    watermark.src = template === 'lajutuju'
+      ? `${basePath}logo.png`
+      : `${basePath}biggor.png`;
     watermark.style.position = 'absolute';
     watermark.style.top = '50%';
     watermark.style.left = '50%';
@@ -159,7 +164,11 @@ export default function InvoicePrint({ order, onClose }: InvoicePrintProps) {
             <div className="border-4 border-orange-600 rounded-lg p-6 relative z-10">
               <div className="flex items-start justify-between mb-6 pb-4 border-b-2 border-orange-600">
                 <div>
-                  <img src="/logo.png" alt="Laju Tuju" className="w-44 mb-2" />
+                  <img
+                    src={`${basePath}logo.png`}
+                    alt="Laju Tuju"
+                    className="w-44 mb-2"
+                  />
                   <p className="text-sm text-gray-600">
                     Soka Asri Permai, Kadisoka, Purwomartani, Kalasan Sleman<br />
                     Telp: +62 821 3856 8822<br />
@@ -237,8 +246,9 @@ export default function InvoicePrint({ order, onClose }: InvoicePrintProps) {
                 <p><strong>Atas Nama:</strong> Moh Fajar Yogyaning Praharu</p>
               </div>
 
-              <div className="text-center">
-                <QRCodeCanvas value="Processed by Laju Tuju System" size={80} />
+              <div className="text-center mt-8">
+              <p className="text-lg font-bold text-orange-600 mb-2">Laju Tuju</p>
+              <QRCodeCanvas value="Processed by Laju Tuju System" size={80} />
               </div>
             </div>
           ) : (
@@ -246,7 +256,7 @@ export default function InvoicePrint({ order, onClose }: InvoicePrintProps) {
             <div className="border-4 border-[#d14545] rounded-lg p-6 bg-gradient-to-b from-[#fdecec] via-[#fffafa] to-[#ffffff] relative z-10">
               <div className="flex flex-col items-center text-center mb-6 pb-4 border-b-2 border-[#d14545]">
                 <img
-                  src="/biggor.png"
+                  src={`${basePath}biggor.png`}
                   alt="Biggor"
                   className="w-40 h-auto mb-3 object-contain"
                 />
