@@ -246,9 +246,9 @@ export default function InvoicePrint({ order, onClose }: InvoicePrintProps) {
                 <p><strong>Atas Nama:</strong> Moh Fajar Yogyaning Praharu</p>
               </div>
 
-              <div className="text-center mt-8">
-              <p className="text-lg font-bold text-orange-600 mb-2">Laju Tuju</p>
-              <QRCodeCanvas value="Processed by Laju Tuju System" size={80} />
+              <div className="flex flex-col items-start mt-8 mb-4">
+                <p className="text-lg font-bold text-orange-600 mb-2">Laju Tuju</p>
+                <QRCodeCanvas value="Processed by Laju Tuju System" size={80} />
               </div>
             </div>
           ) : (
