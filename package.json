@@ -1,9 +1,9 @@
 {
-  "name": "dashboardlaju",
+  "name": "dasbhoard",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/fayzayaganangputra/lajutuju.git",
+  "homepage": "https://github.com/fayzayaganangputra/Dasbhoard.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

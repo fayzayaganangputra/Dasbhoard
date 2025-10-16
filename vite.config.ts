@@ -1,14 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Ganti 'repo-name' dengan nama repository GitHub-mu
+// ✅ Base harus sama dengan nama repository GitHub kamu persis
 export default defineConfig({
-  base: '/lajutuju/', // <- ini penting untuk GitHub Pages
+  base: '/Dasbhoard/', // 🟢 sesuai dengan repo GitHub kamu
   plugins: [react()],
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
   server: {
-    port: 5173, // optional, default Vite
+    port: 5173, // optional, defaultnya Vite
   },
 });
