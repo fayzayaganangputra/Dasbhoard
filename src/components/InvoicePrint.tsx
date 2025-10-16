@@ -60,7 +60,7 @@ export default function InvoicePrint({ order, onClose }: InvoicePrintProps) {
     const originalStyles = { ...invoiceElement.style };
 
     const watermark = document.createElement('img');
-    watermark.src = template === 'lajutuju' ? 'public/logo.png' : 'public/biggor.png';
+    watermark.src = template === 'lajutuju' ? '/logo.png' : '/biggor.png';
     watermark.style.position = 'absolute';
     watermark.style.top = '50%';
     watermark.style.left = '50%';
@@ -159,7 +159,7 @@ export default function InvoicePrint({ order, onClose }: InvoicePrintProps) {
             <div className="border-4 border-orange-600 rounded-lg p-6 relative z-10">
               <div className="flex items-start justify-between mb-6 pb-4 border-b-2 border-orange-600">
                 <div>
-                  <img src="public/logo.png" alt="Laju Tuju" className="w-44 mb-2" />
+                  <img src="/logo.png" alt="Laju Tuju" className="w-44 mb-2" />
                   <p className="text-sm text-gray-600">
                     Soka Asri Permai, Kadisoka, Purwomartani, Kalasan Sleman<br />
                     Telp: +62 821 3856 8822<br />
@@ -246,7 +246,7 @@ export default function InvoicePrint({ order, onClose }: InvoicePrintProps) {
             <div className="border-4 border-[#d14545] rounded-lg p-6 bg-gradient-to-b from-[#fdecec] via-[#fffafa] to-[#ffffff] relative z-10">
               <div className="flex flex-col items-center text-center mb-6 pb-4 border-b-2 border-[#d14545]">
                 <img
-                  src="public/biggor.png"
+                  src="/biggor.png"
                   alt="Biggor"
                   className="w-40 h-auto mb-3 object-contain"
                 />
